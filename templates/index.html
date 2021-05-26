@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Schema Markup Generator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container" id="app">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h2>JSON LD Generator [[ json_type ]]</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <form id="form-schema" method="post">
+            <div class="row">
+              <div class="col-md-3">
+                <label>Type</label>
+              </div>
+              <div class="col-md-9">
+                <select name="json_type" id="json_type" v-model="json_type" class="form-control">
+                  <option value="Organization">Organization</option>
+                  <option value="Product">Product</option>
+                  <option value="Event">Event</option>
+                  <option value="Local Business">Local Business</option>
+                  <option value="Restaurant">Restaurant</option>
+                  <option value="Recipe">Recipe</option>
+                  <option value="Article">Article</option>
+                  <option value="Review">Review</option>
+                  <option value="Movie">Movie</option>
+                  <option value="Video Project">Video Project</option>
+                  <option value="Person">Person</option>
+                  <option value="Brand">Brand</option>
+                  <option value="Book">Book</option>
+                </select>
+              </div>
+            </div>
+            <div id="Person" class="form-fields" v-if="json_type == 'Person'">
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="">ID</label>
+                </div>
+                <div class="col-md-9">
+                  <input type="text" class="form-control" name="id" placeholder="Example: www.example.com/users/1">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="">Name</label>
+                </div>
+                <div class="col-md-9">
+                  <input type="text" class="form-control" name="name" placeholder="Name">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="">Job Title</label>
+                </div>
+                <div class="col-md-9">
+                  <input type="text" class="form-control" name="job_title" placeholder="Job Title">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="">URL</label>
+                </div>
+                <div class="col-md-9">
+                  <input type="text" class="form-control" name="url" placeholder="URL">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="">Email</label>
+                </div>
+                <div class="col-md-9">
+                  <input type="text" class="form-control" name="email" placeholder="Email">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="">Phone</label>
+                </div>
+                <div class="col-md-9">
+                  <input type="text" class="form-control" name="phone" placeholder="Phone">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="">Birth Date</label>
+                </div>
+                <div class="col-md-9">
+                  <input type="date" class="form-control" name="birth_date" placeholder="Birth Date">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="">Address</label>
+                </div>
+                <div class="col-md-9">
+                  <textarea name="address" class="form-control" rows="4"></textarea>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="">City</label>
+                </div>
+                <div class="col-md-4">
+                  <input type="text" class="form-control" name="city" placeholder="City">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="">PO. Box</label>
+                </div>
+                <div class="col-md-3">
+                  <input type="text" class="form-control" name="po_box" placeholder="PO. Box">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="">Region</label>
+                </div>
+                <div class="col-md-4">
+                  <input type="text" class="form-control" name="region" placeholder="Region">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="">Postal Code</label>
+                </div>
+                <div class="col-md-3">
+                  <input type="text" class="form-control" name="postal_code" placeholder="Postal Code">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="">Country</label>
+                </div>
+                <div class="col-md-4">
+                  <input type="text" class="form-control" name="country" placeholder="Country">
+                </div>
+              </div>
+            </div>
+            <div id="Event" class="form-fields" v-if="json_type == 'Event'">
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="">Name</label>
+                </div>
+                <div class="col-md-9">
+                  <input type="text" class="form-control" name="name" placeholder="Name">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="">URL</label>
+                </div>
+                <div class="col-md-9">
+                  <input type="text" class="form-control" name="url" placeholder="URL">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="">Description</label>
+                </div>
+                <div class="col-md-9">
+                  <input type="text" class="form-control" name="description" placeholder="Description">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="">Venue</label>
+                </div>
+                <div class="col-md-9">
+                  <input type="text" class="form-control" name="venue" placeholder="Venue">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <br>
+                <button type="button" id="btnSubmit" @click="submitForm" class="btn btn-primary pull-right">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <textarea name="result" id="result" v-model="result" class="form-control" rows="16"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      var app = new Vue({
+        delimiters : ['[[',']]'],
+        el: '#app',
+        data() {
+          return {
+            json_type: '',
+            result: ''
+          }
+        },
+        methods: {
+          submitForm() {
+            let form = document.getElementById('form-schema')
+            let data = new FormData(form)
+
+            axios.post('/schema', data)
+             .then(response => {
+               this.result = JSON.stringify(response.data, null, "\t")
+             })
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
